@@ -36,6 +36,45 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
 
             return Animals;
         }
+        static void SaveAnimalssToFile(List<Animals> Animals, string path)
+        {
+            List<string> lines = Animals.Select(a => $"{a.AnimalId},{a.Species},{a.Name},{a.Age},{a.Habitat},{a.Availability}").ToList();
+            File.WriteAllLines(path, lines);
+        }
+
+        static void AddAnimals(List<Animals> Animals)
+        {
+            Console.Write("Въведете ID на животното: ");
+            string AnimalsId = Console.ReadLine();
+
+            Console.Write("Въведете вид на животното: ");
+            string species = Console.ReadLine();
+
+            Console.Write("Въведете име на животното: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Въведете възраст на животното: ");
+            int age = int.Parse(Console.ReadLine());
+
+            Console.Write("Въведете местообитание на животното: ");
+            string habitat = Console.ReadLine();
+
+            Console.Write("Животното налично ли е за разглеждане? (true/false): ");
+            bool availability = bool.Parse(Console.ReadLine());
+
+            Animals.Add(new Animals
+            {
+                AnimalId = AnimalsId,
+                Species = species,
+                Name = name,
+                Age = age,
+                Habitat = habitat,
+                Availability = availability
+            });
+
+            SaveAnimalssToFile(Animals, filePath);
+            Console.WriteLine("Животното е добавено успешно.");
+        }
 
     }
 }
