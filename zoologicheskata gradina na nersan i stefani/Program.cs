@@ -76,5 +76,25 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
             Console.WriteLine("Животното е добавено успешно.");
         }
 
+        static void UpdateAnimalsAvailability(List<Animals> Animals)
+        {
+            Console.Write("Въведете ID на животното: ");
+            string AnimalsId = Console.ReadLine();
+
+            var Animal = Animals.FirstOrDefault(a => a.AnimalId == AnimalsId);
+            if (Animals == null)
+            {
+                Console.WriteLine("Животно с този ID не е намерено.");
+                return;
+            }
+
+            Console.Write("Животното налично ли е за разглеждане? (true/false): ");
+            Animal.Availability = bool.Parse(Console.ReadLine());
+
+            SaveAnimalssToFile(Animals, filePath);
+            Console.WriteLine("Статусът на наличност е променен успешно.");
+        }
+
+
     }
 }
