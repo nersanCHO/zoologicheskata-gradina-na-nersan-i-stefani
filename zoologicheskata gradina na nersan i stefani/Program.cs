@@ -112,6 +112,13 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
             Console.WriteLine($"Местообитание: {Animal.Habitat}");
             Console.WriteLine($"Наличност: {Animal.Availability}");
         }
+        static void ListAllAnimalss(List<Animals> Animals)
+        {
+            foreach (var Animal in Animals)
+            {
+                Console.WriteLine($"ID: {Animal.AnimalId}, Вид: {Animal.Species}, Име: {Animal.Name}, Възраст: {Animal.Age}, Местообитание: {Animal.Habitat}, Наличност: {Animal.Availability}");
+            }
+        }
 
 
     }
