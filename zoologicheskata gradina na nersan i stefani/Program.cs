@@ -8,8 +8,50 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
 {
     internal class Program
     {
+        private const string filePath = @" D:\programer\zoologicheskata gradina na nersan i stefani\zoologicheskata gradina na nersan i stefani\animals.txt";
+
+        private static List<Animals> animals = new List<Animals>();
+        private static string menuActionChoice;
+
         static void Main(string[] args)
         {
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
+            List<Animals> Animals = LoadAnimalssFromFile(filePath);
+
+            while (true)
+            {
+                Console.WriteLine("1. Добавяне на ново животно");
+                Console.WriteLine("2. Промяна на статуса наличност на животно");
+                Console.WriteLine("3. Проверка на наличността и информацията за животното");
+                Console.WriteLine("4. Справка за всички животни");
+                Console.WriteLine("5. Изход");
+                Console.Write("Изберете опция: ");
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        AddAnimals(Animals);
+                        break;
+                    case "2":
+                        UpdateAnimalsAvailability(Animals);
+                        break;
+                    case "3":
+                        CheckAnimalsInfo(Animals);
+                        break;
+                    case "4":
+                        ListAllAnimalss(Animals);
+                        break;
+                    case "5":
+                        SaveAnimalssToFile(Animals, filePath);
+                        return;
+                    default:
+                        Console.WriteLine("Невалиден избор. Опитайте отново.");
+                        break;
+                }
+            }
+
         }
         static List<Animals> LoadAnimalssFromFile(string path)
         {
