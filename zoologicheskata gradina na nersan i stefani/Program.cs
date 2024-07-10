@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
 {
     internal class Program
     {
-        private const string filePath = @" D:\programer\zoologicheskata gradina na nersan i stefani\zoologicheskata gradina na nersan i stefani\animals.txt";
+        private const string filePath = "../../../../animals.txt";
 
         private static List<Animals> animals = new List<Animals>();
         private static string menuActionChoice;
