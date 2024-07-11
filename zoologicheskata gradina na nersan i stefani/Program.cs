@@ -9,6 +9,7 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
 {
     internal class Program
     {
+        //s
         private const string filePath = "../../animals.txt";
 
         private static List<Animals> animals = new List<Animals>();
@@ -87,6 +88,7 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
             }
 
         }
+
         static List<Animals> LoadAnimalssFromFile(string path)
         {
             List<Animals> Animals = new List<Animals>();
@@ -112,6 +114,7 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
 
             return Animals;
         }
+        //n
         static void SaveAnimalssToFile(List<Animals> Animals, string path)
         {
             List<string> lines = Animals.Select(a => $"{a.AnimalId},{a.Species},{a.Name},{a.Age},{a.Habitat},{a.Availability}").ToList();
@@ -158,6 +161,7 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
             Console.WriteLine("Животното е добавено успешно.");
             Console.WriteLine();
         }
+        //s
 
         static void UpdateAnimalsAvailability(List<Animals> Animals)
         {
@@ -183,6 +187,7 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
             Console.WriteLine("Статусът на наличност е променен успешно.");
             Console.WriteLine();
         }
+        //n
         static void CheckAnimalsInfo(List<Animals> Animals)
         {
             Console.WriteLine();

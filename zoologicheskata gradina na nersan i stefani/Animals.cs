@@ -8,6 +8,7 @@ namespace zoologicheskata_gradina_na_nersan_i_stefani
 {
     internal class Animals
     {
+        //n
         public string AnimalId { get; set; }
         public string Species { get; set; }
         public string Name { get; set; }
